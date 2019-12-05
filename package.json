@@ -1,0 +1,63 @@
+{
+  "name": "@nextinq/validation",
+  "version": "1.0.0",
+  "description": "Validators, schema validation",
+  "main": "lib/index.js",
+  "files": [
+    "lib/**"
+  ],
+  "repository": "git@github.com:nextinq/validation",
+  "author": "Josef Karamon <josef.karamon@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "bump": "npm version patch && git push",
+    "publish:npm": "npm publish --access public",
+    "clean": "rimraf lib",
+    "test": "yarn jest src",
+    "test:watch": "yarn jest src --watch",
+    "lint": "yarn eslint 'src/{**/*,*}.ts*'",
+    "build": "yarn clean && yarn tsc",
+    "format": "prettier --single-quote --arrow-parens always --write 'src/{**/*,*}.ts*'",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "engines": {
+    "node": ">= 8.x"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "devDependencies": {
+    "@types/deep-equal": "^1.0.1",
+    "@types/enzyme": "^3.10.3",
+    "@types/jest": "^24.0.23",
+    "@types/lodash.get": "^4.4.6",
+    "@types/lodash.set": "^4.3.6",
+    "@types/react": "^16.9.14",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "coveralls": "^3.0.9",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": ">=3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": ">=9.5.0",
+    "prettier": "1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@types/validator": "^12.0.1",
+    "rodnecislo": "^1.5.4",
+    "validator": "^12.1.0"
+  }
+}
