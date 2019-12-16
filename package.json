@@ -1,10 +1,11 @@
 {
   "name": "@nextinq/validation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validators, schema validation",
   "main": "lib/index.js",
   "files": [
-    "lib/**"
+    "lib/**",
+    "src/**"
   ],
   "repository": "git@github.com:nextinq/validation",
   "author": "Josef Karamon <josef.karamon@gmail.com>",
