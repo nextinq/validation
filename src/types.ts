@@ -5,8 +5,8 @@ export type ErrorSeverity = 'error' | 'warning' | string;
 export type ValidationError = {
   source: string;
   code: string;
-  message: string;
-  severity: ErrorSeverity;
+  message?: string;
+  severity?: ErrorSeverity;
 };
 
 export type FieldSchema = {

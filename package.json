@@ -1,6 +1,6 @@
 {
   "name": "@nextinq.public/validation",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Validators, schema validation",
   "main": "lib/index.js",
   "files": [
