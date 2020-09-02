@@ -2,6 +2,7 @@
 import { validateRequired } from './validators/validate-required';
 import { resolveValidator } from './validators';
 import { ValidationError, ValidationSchema } from '../types';
+import getPropVal from 'lodash.get';
 
 export function validateSchema(
   schema: ValidationSchema,
@@ -9,8 +10,8 @@ export function validateSchema(
 ): Array<ValidationError> {
   const errors: Array<ValidationError> = [];
   for (const schemaFieldName in schema) {
-    const field = schema[schemaFieldName];
-    const value = data[schemaFieldName];
+    const field = schema[schemaFieldName] || getPropVal(schema, schemaFieldName);
+    const value = getPropVal(data, schemaFieldName);
     const fieldData = { fieldName: schemaFieldName, field, value };
     const severity = field.severity || 'Error';
     const requiredSeverity = field.requiredSeverity || 'Error';

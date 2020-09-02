@@ -1,5 +1,3 @@
-// @flow
-
 export type ErrorSeverity = 'error' | 'warning' | string;
 
 export type ValidationError = {

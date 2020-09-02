@@ -1,6 +1,6 @@
 {
   "name": "@nextinq.public/validation",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Validators, schema validation",
   "main": "lib/index.js",
   "files": [
@@ -58,6 +58,7 @@
   },
   "dependencies": {
     "@types/validator": "^12.0.1",
+    "lodash.get": "^4.4.2",
     "rodnecislo": "^1.5.4",
     "validator": "^12.1.0"
   }
