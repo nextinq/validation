@@ -24,6 +24,12 @@ export function validateSchema(
         validationFn(fieldData, errors, severity);
       }
     }
+    if (field.validate) {
+      const newErrors = field.validate(value, data) || [];
+      for (const err of newErrors) {
+        errors.push(err);
+      }
+    }
   }
   return errors;
 }

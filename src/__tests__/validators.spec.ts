@@ -1,13 +1,6 @@
 import { validators } from '../index';
 import { isBirthNumber, isCZDIC, isICO } from '../validators';
-const {
-  isLength,
-  isName,
-  isNumeric,
-  isPhone,
-  isPostalCode,
-  isEmail
-} = validators;
+const { isLength, isName, isNumeric, isPhone, isPostalCode, isEmail } = validators;
 
 describe('validators', () => {
   describe('isPhone', () => {

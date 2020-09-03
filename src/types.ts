@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type ErrorSeverity = 'error' | 'warning' | string;
 
 export type ValidationError = {
@@ -12,6 +13,7 @@ export type FieldSchema = {
   required?: boolean;
   severity?: ErrorSeverity;
   requiredSeverity?: ErrorSeverity;
+  validate?: (value: any, data?: Record<string, any>) => Array<ValidationError>;
 };
 
 export type FieldData = {
