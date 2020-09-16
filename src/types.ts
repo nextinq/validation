@@ -1,3 +1,5 @@
+import { RodneCislo } from 'rodnecislo';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export type ErrorSeverity = 'error' | 'warning' | string;
 
@@ -13,7 +15,7 @@ export type FieldSchema = {
   required?: boolean;
   severity?: ErrorSeverity;
   requiredSeverity?: ErrorSeverity;
-  validate?: (value: any, data?: Record<string, any>) => Array<ValidationError>;
+  validate?: (value: any, data?: any, fieldName?: string) => Array<ValidationError>;
 };
 
 export type FieldData = {
@@ -25,3 +27,6 @@ export type FieldData = {
 export type ValidationSchema = {
   [key in string]: FieldSchema;
 };
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface BirthNumber extends RodneCislo {}

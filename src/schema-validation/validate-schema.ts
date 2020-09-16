@@ -25,7 +25,7 @@ export function validateSchema(
       }
     }
     if (field.validate) {
-      const newErrors = field.validate(value, data) || [];
+      const newErrors = field.validate(value, data, schemaFieldName) || [];
       for (const err of newErrors) {
         errors.push(err);
       }

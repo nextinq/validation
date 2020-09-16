@@ -1,5 +1,6 @@
 import validator from 'validator';
 import { rodnecislo } from 'rodnecislo';
+import { BirthNumber } from './types';
 
 export function isPhone(val: string | null | undefined, locale?: string): boolean {
   if (val == null) {
@@ -48,14 +49,18 @@ export function isPostalCode(val: string | null | undefined): boolean {
   return validator.isPostalCode(val, 'any');
 }
 
-export function isBirthNumber(val: string | null | undefined): boolean {
+export function getBirthNumber(val: string | null | undefined): BirthNumber {
   if (val == null) {
-    return false;
+    return rodnecislo('');
   }
   if (val.replace('/', '').trim().length > 10) {
-    return false;
+    return rodnecislo('');
   }
-  const rc = rodnecislo(val);
+  return rodnecislo(val);
+}
+
+export function isBirthNumber(val: string | null | undefined): boolean {
+  const rc = getBirthNumber(val);
   return rc.isValid();
 }
 
